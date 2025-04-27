@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Risk Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Risk Prediction</h1>
+        
+        <form id="diabetesForm">
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age (years)</label>
+                <input type="number" id="age" name="age" min="0" max="120" required>
+            </div>
+            
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" id="hypertension" name="hypertension">
+                    Hypertension
+                </label>
+                <label>
+                    <input type="checkbox" id="heart_disease" name="heart_disease">
+                    Heart Disease
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="smoking_history">Smoking History</label>
+                <select id="smoking_history" name="smoking_history" required>
+                    <option value="">Select Smoking History</option>
+                    <option value="never">Never smoked</option>
+                    <option value="former">Former smoker</option>
+                    <option value="current">Current smoker</option>
+                    <option value="not current">Not current smoker</option>
+                    <option value="ever">Ever smoked</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="bmi">BMI</label>
+                <input type="number" id="bmi" name="bmi" step="0.1" min="10" max="70" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="HbA1c_level">HbA1c Level (%)</label>
+                <input type="number" id="HbA1c_level" name="HbA1c_level" step="0.1" min="3" max="20" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="blood_glucose_level">Blood Glucose Level (mg/dL)</label>
+                <input type="number" id="blood_glucose_level" name="blood_glucose_level" min="50" max="500" required>
+            </div>
+            
+            <div class="loading" id="loadingIndicator">
+                <div class="spinner"></div>
+                Processing your request...
+            </div>
+            
+            <button type="submit">Predict Diabetes Risk</button>
+        </form>
+        
+        <div class="error" id="errorMessage"></div>
+        <div class="result" id="predictionResult"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

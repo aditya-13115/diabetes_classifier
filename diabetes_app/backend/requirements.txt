@@ -1,0 +1,8 @@
+fastapi
+uvicorn 
+python-multipart 
+scikit-learn 
+pandas 
+numpy
+pytz
+python-dateutil
